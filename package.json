@@ -1,0 +1,27 @@
+{
+  "name": "yu",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:ayu-666/blog_server.git",
+  "author": "yu",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "now -p"
+  },
+  "now": {
+    "alias": "blogserver",
+    "env": {
+      "NODE_ENV": "production",
+      "DEBUG": "docsify"
+    }
+  },
+  "dependencies": {
+    "docsify-cli": "^4.1.7",
+    "live-server": "^1.2.1",
+    "vercel": "^23.1.2"
+  },
+  "devDependencies": {
+    "now": "^6.2.0"
+  }
+}

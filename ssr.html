@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YU·BLOG</title>
+    <link rel="icon" href="https://docsify.js.org/_media/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/docsify/themes/vue.css">
+    <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9e8fe8ec00056ee14d4acb5fbc056fbb";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        function getEditBtn(){
+            let url = window.location.href
+            let hashIndex = url.indexOf("#/")
+            if (hashIndex!=-1) {
+                let path = url.substr(hashIndex+2)
+                // let editUrl = "https://github.com/ayu-666/note/edit/main"
+                let editUrl= "https://github.com/ayu-666/note/blob/main/"
+                if(editUrl.substr(editUrl.length-1,editUrl.length)!='/'){
+                    editUrl += "/"
+                }
+                editUrl = editUrl+path
+                if (editUrl.substr(editUrl.length-1,editUrl.length)=="/"){
+                    editUrl+="README.md"
+                }else{
+                    editUrl+=".md"
+                }
+                let endIndex = editUrl.indexOf("?")
+                endIndex = (endIndex>-1?endIndex:editUrl.length)
+                editUrl = editUrl.substr(0,endIndex)
+                return `[在github上编辑](${editUrl})`
+            }
+            return ""
+        }
+    </script>
+
+</head>
+<body>
+<!--inject-app-->
+<!--inject-config-->
+</body>
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<script src="//unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</html>
