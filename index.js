@@ -2,27 +2,13 @@ const liveServer = require('live-server')
 const middleware = []
 var Renderer = require('./docsify-server-renderer-fix')
 var readFileSync = require('fs').readFileSync
+
 var renderer = new Renderer({
     template: readFileSync('./ssr.html', 'utf-8'),
     config: {
         name: '多看Blog',
         repo: 'ayu-666/blog',
-        basePath: "https://blog1.duokan.xyz/",
-        routerMode: 'hash',
-        plugins: [
-            function (hook, vm) {
-                hook.beforeEach(function (str) {
-                    let editBtn = getEditBtn()
-                    try {
-                        console.log(str, editBtn)
-                        let length = (str.match(/^(\s*#){1}\s+.*\n/)[0]).length
-                        str = str.slice(0, length) + `\n ${editBtn} \n` + str.slice(length)  //Hello-local,world!
-                    } catch (e) {
-                    }
-                    return str;
-                });
-            },
-        ],
+        basePath: "../blog",
         pagination: {
             previousText: '上一章节',
             nextText: '下一章节',

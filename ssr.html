@@ -17,32 +17,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <script>
-        function getEditBtn(){
-            let url = window.location.href
-            let hashIndex = url.indexOf("#/")
-            if (hashIndex!=-1) {
-                let path = url.substr(hashIndex+2)
-                // let editUrl = "https://github.com/ayu-666/note/edit/main"
-                let editUrl= "https://github.com/ayu-666/note/blob/main/"
-                if(editUrl.substr(editUrl.length-1,editUrl.length)!='/'){
-                    editUrl += "/"
-                }
-                editUrl = editUrl+path
-                if (editUrl.substr(editUrl.length-1,editUrl.length)=="/"){
-                    editUrl+="README.md"
-                }else{
-                    editUrl+=".md"
-                }
-                let endIndex = editUrl.indexOf("?")
-                endIndex = (endIndex>-1?endIndex:editUrl.length)
-                editUrl = editUrl.substr(0,endIndex)
-                return `[在github上编辑](${editUrl})`
-            }
-            return ""
-        }
-    </script>
-
 </head>
 <body>
 <!--inject-app-->
